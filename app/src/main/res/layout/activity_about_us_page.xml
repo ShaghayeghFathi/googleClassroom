@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUsPage"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        app:title="About Us"
+        android:background="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutUsToolbar"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="50dp"
+        android:inputType="textMultiLine"
+        android:text="Hello :)\nWe are Shaghayegh and Parmida :3\nWe are baby developers UwU\nWe study computer engineering at SBU ^-^\nWe hope you enjoy this app :D\nFollow us on instagram: @shaghayeghfathi @parmidaa_kh"
+        />
+
+</LinearLayout>

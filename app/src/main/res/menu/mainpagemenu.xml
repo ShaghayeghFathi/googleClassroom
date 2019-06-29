@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuPlus"
+        android:icon="@drawable/plusicon"
+        android:title="@string/mainPlus"
+        app:showAsAction="always"
+        >
+        <menu>
+            <item android:id="@+id/createClass"
+                android:title="@string/createClass"
+                app:showAsAction="never"/>
+
+            <item android:id="@+id/joinClass"
+                android:title="@string/joinClass"
+                app:showAsAction="never"/>
+        </menu>
+
+    </item>
+    <item android:id="@+id/AboutUs"
+        android:title="AboutUs"
+        app:showAsAction="never"/>
+    <item android:id="@+id/Notifications"
+        android:title="Notification"
+        app:showAsAction="never"/>
+    <item android:id="@+id/Refresh"
+        android:title="Refresh"
+        app:showAsAction="never"/>
+
+</menu>

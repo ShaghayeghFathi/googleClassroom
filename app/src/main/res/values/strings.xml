@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">google classroom</string>
+    <string name="Refresh">Refresh</string>
+    <string name="Notifications">Notifications</string>
+    <string name="AboutUs">AboutUs</string>
+    <string name="Classes">Classes</string>
+    <string name="mainPlus">mainPlus</string>
+    <string name="createClass">create class</string>
+    <string name="joinClass">join class</string>
+</resources>

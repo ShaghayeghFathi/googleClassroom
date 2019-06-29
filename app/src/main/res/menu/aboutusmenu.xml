@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Refresh"
+        android:id="@+id/Refresh"
+        app:showAsAction="never"></item>
+    <item android:id="@+id/Notifications"
+        android:title="Notification"
+        app:showAsAction="never"></item>
+    <item android:id="@+id/Classes"
+        android:title="Classes"
+        app:showAsAction="never"></item>
+</menu>
