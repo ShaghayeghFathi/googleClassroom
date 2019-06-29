@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".JoinClassPage"
     android:orientation="vertical">
+    //hey
     <android.support.v7.widget.Toolbar
         app:title="Create Class"
         android:background="@color/colorPrimaryDark"
