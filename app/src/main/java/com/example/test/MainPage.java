@@ -1,6 +1,8 @@
 package com.example.test;
 
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,13 +11,19 @@ import android.view.View;
 import android.widget.Toast;
 
 public class MainPage extends AppCompatActivity {
-
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
         android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.mainToolbar);
         setSupportActionBar(myToolbar);
+        drawerLayout=findViewById(R.id.drawable);
+        actionBarDrawerToggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -31,13 +39,17 @@ public class MainPage extends AppCompatActivity {
             startActivity(i);
         } else if (item.getItemId() == R.id.Refresh) {
             OnRestart();
-        } else if (item.getItemId() == R.id.joinClass) {
+        }
+ else if (item.getItemId() == R.id.joinClass) {
             Intent i = new Intent(MainPage.this, JoinClassPage.class);
             startActivity(i);
 
         } else if (item.getItemId() == R.id.createClass) {
             Intent i = new Intent(MainPage.this, CreateClassPage.class);
             startActivity(i);
+        }
+        else if(actionBarDrawerToggle.onOptionsItemSelected(item)){
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -49,4 +61,5 @@ public class MainPage extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
 }

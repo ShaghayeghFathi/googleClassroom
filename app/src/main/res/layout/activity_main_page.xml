@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="MainPage">
+
     <android.support.v7.widget.Toolbar
-        app:title="Google Classroom"
-        android:background="@color/colorPrimaryDark"
+        android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/mainToolbar"
+        android:background="@color/colorPrimaryDark"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
-        />
+        app:title="Google Classroom"></android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.DrawerLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.NavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:menu="@menu/mainpagemenu"></android.support.design.widget.NavigationView>
+    </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

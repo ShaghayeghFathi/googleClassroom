@@ -17,7 +17,6 @@
                 android:title="@string/joinClass"
                 app:showAsAction="never"/>
         </menu>
-
     </item>
     <item android:id="@+id/AboutUs"
         android:title="AboutUs"
@@ -28,5 +27,9 @@
     <item android:id="@+id/Refresh"
         android:title="Refresh"
         app:showAsAction="never"/>
+    <group android:checkableBehavior="single"
+        android:id="@+id/Classes"
+        android:title="@string/Classes"
+        />
 
 </menu>

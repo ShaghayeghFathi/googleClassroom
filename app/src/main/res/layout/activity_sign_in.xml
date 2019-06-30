@@ -24,6 +24,7 @@
         android:paddingLeft="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="clickUsername_in"
 
         />
     <EditText
@@ -37,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-
+        android:onClick="clickPassword_in"
         />
 
     <Button
