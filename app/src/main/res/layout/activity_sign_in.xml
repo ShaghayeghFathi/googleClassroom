@@ -4,50 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity"
-    android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign In"
-        android:textSize="20sp"
-        android:id="@+id/signIn_tv"
-        android:layout_marginTop="70dp"
-        android:layout_gravity="center"/>
-    <EditText
-        android:id="@+id/username_signin_et"
-        android:hint="Username"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="clickUsername_in"
+    android:orientation="vertical"
+    tools:context=".SignInActivity">
 
-        />
-    <EditText
-        android:id="@+id/password_signin_et"
-        android:hint="password"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:onClick="clickPassword_in"
-        />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/signIn_enter_btn"
-        android:text="sign in"
-        android:textSize="10sp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:onClick="signIn_enter"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/signIn_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:text="Sign In"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/username_signin_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="Username"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+
+                />
+
+            <EditText
+                android:id="@+id/password_signin_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="password"
+                android:inputType="textPassword"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp" />
+
+            <Button
+                android:id="@+id/signIn_enter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:onClick="signIn_enter"
+                android:text="sign in"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

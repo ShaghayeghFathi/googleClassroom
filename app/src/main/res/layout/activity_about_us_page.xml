@@ -4,23 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUsPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".AboutUsPage">
+
     <android.support.v7.widget.Toolbar
-        app:title="About Us"
-        android:background="@color/colorPrimaryDark"
+        android:id="@+id/aboutUsToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/aboutUsToolbar"
+        android:background="@color/colorPrimaryDark"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="50dp"
-        android:inputType="textMultiLine"
-        android:text="Hello :)\nWe are Shaghayegh and Parmida :3\nWe are baby developers UwU\nWe study computer engineering at SBU ^-^\nWe hope you enjoy this app :D\nFollow us on instagram: @shaghayeghfathi @parmidaa_kh"
-        />
+        app:title="About Us" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:inputType="textMultiLine"
+                android:text="Hello :)\nWe are Shaghayegh and Parmida :3\nWe are baby developers UwU\nWe study computer engineering at SBU ^-^\nWe hope you enjoy this app :D\nFollow us on instagram: @shaghayeghfathi @parmidaa_kh"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -17,59 +17,101 @@ public class SignInActivity extends AppCompatActivity {
     Button signIn;
     String username_input;
     String password_input;
-    boolean correctUsername=false;
-    boolean correctPassword=false;
+    boolean correctUsername = false;
+    boolean correctPassword = false;
+    final String TAG = "asdf";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        username=findViewById(R.id.username_signin_et);
-        password=findViewById(R.id.password_signin_et);
-        signIn=findViewById(R.id.signIn_btn);
-    }
-    public void signIn_enter (View v) {
-        username_input=username.getText().toString();
-        password_input=password.getText().toString();
-        if(username_input.matches("")){
-            username.setError("This field must be filled!");
-            correctUsername=false;
-        }else {
-            correctUsername=true;
-        }
-        if(password_input.matches("")){
-            password.setError("This field must be filled!");
-            correctPassword=false;
-        }else{
-            correctPassword=true;
-        }
-        if(correctPassword && correctUsername){
-            new WriterThread().execute(username_input+ " " + password_input);
-            try {
-                String answer = new ReaderThread().execute().get();
-                if( answer.equals("match")){
-                    Log.d("hello", "signIn_enter: its matched");
-                    Intent goMainPage = new Intent(SignInActivity.this, MainActivity.class);
-                    startActivity(goMainPage);
-                }else{
-                    Toast.makeText(this,"Wrong username or password",Toast.LENGTH_SHORT).show();
+        username = findViewById(R.id.username_signin_et);
+        username.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    isCorrectUsername();
                 }
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
+        });
+        password = findViewById(R.id.password_signin_et);
+        password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    clickPassword_in();
+                }
+            }
+        });
+        signIn = findViewById(R.id.signIn_btn);
+    }
+
+    public void signIn_enter(View v) {
+        try {
+            Log.d(TAG, "signIn_enter: ");
+            if (clickPassword_in() && isCorrectUsername()) {
+                new WriterThread(getApplicationContext()).execute("password", password_input);
+                String ans = new ReaderThread().execute().get();
+                if (ans.equals("match")) {
+                    correctPassword = true;
+                } else if (ans.equals("notMatch")) {
+                    correctPassword = false;
+                    Toast.makeText(this, "Username and password don't match", Toast.LENGTH_LONG).show();
+                    return;
+                }
+            }
+            if (correctPassword && correctUsername) {
+                new WriterThread(getApplicationContext()).execute("done");
+                String msg = null;
+                try {
+                    msg = new ReaderThread().execute().get();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (msg.equals("loggedIn")) {
+                    Intent GoMainPage = new Intent(SignInActivity.this, MainPage.class);
+                    startActivity(GoMainPage);
+                }
+
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
-    public void clickPassword_in(View v){
-        username_input=username.getText().toString();
-        if(username_input.matches("")){
-            username.setError("This field must be filled!");
-        }
-    }
-    public void clickUsername_in(View view){
-        password_input=password.getText().toString();
-        if(password_input.matches("")){
+
+    public boolean clickPassword_in() {
+        password_input = password.getText().toString();
+        if (password_input.matches("")) {
             password.setError("This field must be filled!");
+            return false;
         }
+        return true;
+    }
+
+    private boolean isCorrectUsername() {
+        try {
+            username_input = username.getText().toString();
+            if (username_input.matches("")) {
+                username.setError("This field must be filled!");
+                correctUsername = false;
+            } else {
+                new WriterThread(getApplicationContext()).execute("username", username_input);
+                String ans = new ReaderThread().execute().get();
+                if (ans.equals("notExist")) {
+                    correctUsername = false;
+                    username.setError("Username doesn't exist");
+                    username.setText("");
+                } else if (ans.equals("exist")) {
+                    correctUsername = true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return correctUsername;
     }
 }

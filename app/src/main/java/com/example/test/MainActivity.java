@@ -16,18 +16,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         new SocketThread().execute();
         Log.d("main", "onCreate: making new connection");
+        findViewById(R.id.signUp_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signUp(v);
+            }
+        });
 
     }
     public void signUp (View v)
     {
-        new WriterThread().execute("signUp");
+        new WriterThread(getApplicationContext()).execute("signUp");
         Intent GoSignUpActivity = new Intent (MainActivity.this,SignUpActivity.class);
         startActivity(GoSignUpActivity);
 
     }
     public void signIn (View v)
     {
-        new WriterThread().execute("signUp");
+        new WriterThread(getApplicationContext()).execute("signIn");
         Intent GoSignInActivity = new Intent (MainActivity.this,SignInActivity.class);
         startActivity(GoSignInActivity);
 

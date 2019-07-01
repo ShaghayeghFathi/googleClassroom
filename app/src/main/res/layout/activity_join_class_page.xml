@@ -4,42 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JoinClassPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".JoinClassPage">
     //hey
+
     <android.support.v7.widget.Toolbar
-        app:title="Create Class"
-        android:background="@color/colorPrimaryDark"
+        android:id="@+id/joinClassToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/joinClassToolbar"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar">
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
+        app:title="Create Class">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="Join"
-                android:background="@color/colorPrimaryDark"/>
-                android:id="@+id/join_btn"
+                android:background="@color/colorPrimaryDark"
+                android:text="Join" />
+            android:id="@+id/join_btn"
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ask your teacher for class code,then enter it here."
-        android:textSize="15sp"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:textSize="10sp"
-        android:hint="Class code" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Ask your teacher for class code,then enter it here."
+                android:textSize="15sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:hint="Class code"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

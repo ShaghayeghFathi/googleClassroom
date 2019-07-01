@@ -4,65 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateClassPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".CreateClassPage">
+
     <android.support.v7.widget.Toolbar
-        app:title="Create Class"
-        android:background="@color/colorPrimaryDark"
+        android:id="@+id/createClassToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/createClassToolbar"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar">
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
+        app:title="Create Class">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="Create"
-                android:background="@color/colorPrimaryDark"/>
-                android:id="@+id/create_btn"
+                android:background="@color/colorPrimaryDark"
+                android:text="Create" />
+            android:id="@+id/create_btn"
         </RelativeLayout>
-        </android.support.v7.widget.Toolbar>
-    <EditText
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Class Name(required)"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/className_et"
-        android:onClick="className"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Section"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/sectionName_et"
-        android:onClick="section"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Room"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/roomName_et"
-        android:onClick="room"
-        />
-    <EditText
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Subject"
-        android:layout_marginTop="10dp"
-        android:id="@+id/subjectName_et"
-        android:onClick="subject"
-        />
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/className_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:hint="Class Name(required)"
+                android:onClick="className" />
+
+            <EditText
+                android:id="@+id/sectionName_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:hint="Section"
+                android:onClick="section" />
+
+            <EditText
+                android:id="@+id/roomName_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:hint="Room"
+                android:onClick="room" />
+
+            <EditText
+                android:id="@+id/subjectName_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Subject"
+                android:onClick="subject" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
