@@ -78,12 +78,13 @@ public class SignUpActivity extends AppCompatActivity {
 
     private boolean isCorrectUsername() {
         input_username = username.getText().toString();
-        if (input_username != null && !input_username.equals("")) {
+        if (!input_username.equals("")) {
             new WriterThread(getApplicationContext()).execute("username", input_username);
             try {
                 String response = new ReaderThread().execute().get();
                 if (response.equals("repetitiveUsername")) {
                     username.setError("Username is Taken");
+                    password.clearFocus();
                     username.requestFocus();
                 } else if (response.equals("uniqueUsername")) {
                     return true;

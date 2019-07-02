@@ -24,7 +24,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:background="@color/colorPrimaryDark"
-                android:text="Create" />
+                android:text="Create"
+                android:onClick="createButton"/>
             android:id="@+id/create_btn"
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -45,8 +46,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:hint="Class Name(required)"
-                android:onClick="className" />
+                android:hint="Class Name(required)" />
 
             <EditText
                 android:id="@+id/sectionName_et"
@@ -55,8 +55,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:hint="Section"
-                android:onClick="section" />
+                android:hint="Section" />
 
             <EditText
                 android:id="@+id/roomName_et"
@@ -65,8 +64,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:hint="Room"
-                android:onClick="room" />
+                android:hint="Room" />
 
             <EditText
                 android:id="@+id/subjectName_et"
@@ -75,8 +73,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Subject"
-                android:onClick="subject" />
+                android:hint="Subject" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

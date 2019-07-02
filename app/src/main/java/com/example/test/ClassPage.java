@@ -1,47 +1,37 @@
 package com.example.test;
 
 import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-public class MainPage extends AppCompatActivity {
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
+public class ClassPage extends AppCompatActivity {
+final String TAG="newdddddddddddddd";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_class_page);
         android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.mainToolbar);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.mainpagemenu, menu);
+        getMenuInflater().inflate(R.menu.classmenu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.AboutUs) {
-            Intent i = new Intent(MainPage.this, AboutUsPage.class);
+            Intent i = new Intent(ClassPage.this, AboutUsPage.class);
             startActivity(i);
         } else if (item.getItemId() == R.id.Refresh) {
             OnRestart();
         }
- else if (item.getItemId() == R.id.joinClass) {
-            Intent i = new Intent(MainPage.this, JoinClassPage.class);
-            startActivity(i);
-
-        } else if (item.getItemId() == R.id.createClass) {
-            Intent i = new Intent(MainPage.this, CreateClassPage.class);
+        else if (item.getItemId()==R.id.Classes)
+        {
+            Intent i=new Intent(ClassPage.this,MainPage.class);
             startActivity(i);
         }
 
@@ -50,9 +40,8 @@ public class MainPage extends AppCompatActivity {
 
     protected void OnRestart() {
         super.onRestart();
-        Intent i = new Intent(MainPage.this, MainPage.class);
+        Intent i = new Intent(ClassPage.this, ClassPage.class);
         startActivity(i);
         finish();
     }
-
 }

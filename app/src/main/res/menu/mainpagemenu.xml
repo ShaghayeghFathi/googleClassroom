@@ -27,9 +27,5 @@
     <item android:id="@+id/Refresh"
         android:title="Refresh"
         app:showAsAction="never"/>
-    <group android:checkableBehavior="single"
-        android:id="@+id/Classes"
-        android:title="@string/Classes"
-        />
 
 </menu>
