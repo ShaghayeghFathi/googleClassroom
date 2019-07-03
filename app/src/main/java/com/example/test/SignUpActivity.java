@@ -145,7 +145,7 @@ public class SignUpActivity extends AppCompatActivity {
                 try {
                     String s = new ReaderThread().execute().get();
                     if(s.equals("error")){
-                        Toast.makeText(getApplicationContext(),"sdfklasjdlfasdjflkajb",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_LONG).show();
                     }else if(s.equals("received")){
                         Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_LONG).show();
                     }

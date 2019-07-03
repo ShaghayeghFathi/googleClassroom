@@ -24,8 +24,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@color/colorPrimaryDark"
-                android:text="Join" />
+                android:background="@color/colorPrimary"
+                android:text="Join"
+                android:onClick="selectJoin"/>
             android:id="@+id/join_btn"
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -48,6 +49,7 @@
                 android:textSize="15sp" />
 
             <EditText
+                android:id="@+id/classCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

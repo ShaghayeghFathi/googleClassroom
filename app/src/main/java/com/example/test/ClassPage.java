@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -43,5 +44,11 @@ final String TAG="newdddddddddddddd";
         Intent i = new Intent(ClassPage.this, ClassPage.class);
         startActivity(i);
         finish();
+    }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            Log.d(this.getClass().getName(), "back button pressed");
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

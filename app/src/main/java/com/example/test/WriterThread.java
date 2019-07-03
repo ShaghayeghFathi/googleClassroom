@@ -23,7 +23,7 @@ public class WriterThread extends AsyncTask<String, Void, Void> {
         pd.setCancelable(false);
         pd.setTitle("Please Wait...");
         pd.setMessage("Managing Data Transfer");
-//        pd.show();
+//       pd.show();
     }
 
     @Override
@@ -43,6 +43,5 @@ public class WriterThread extends AsyncTask<String, Void, Void> {
     @Override
     protected void onPostExecute(Void aVoid) {
         pd.dismiss();
-
     }
 }

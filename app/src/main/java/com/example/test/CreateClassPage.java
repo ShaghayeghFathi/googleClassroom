@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+
+import java.io.IOException;
 
 public class CreateClassPage extends AppCompatActivity {
     EditText className;
@@ -69,12 +72,22 @@ final String TAG="fuq";
     }
 
     public void createButton(View v) {
-//        Log.d(TAG, "createButton: in fucking if");
         if (className() && room()) {
-            section_input = section.getText().toString();
-            new WriterThread(getApplication()).execute("createClass",subject_input,room_input,section_input);
-            Intent in=new Intent(CreateClassPage.this,ClassPage.class);
-            startActivity(in);
+            try {
+                section_input = section.getText().toString();
+                room_input = room.getText().toString();
+                className_input = className.getText().toString();
+                new WriterThread(getApplication()).execute("createClass");
+                new WriterThread(getApplication()).execute(subject_input);
+                new WriterThread(getApplication()).execute(room_input);
+                new WriterThread(getApplication()).execute(section_input);
+                new WriterThread(getApplication()).execute("last one");
+                Intent in = new Intent(CreateClassPage.this, ClassPage.class);
+                startActivity(in);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
+
 }
