@@ -84,8 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String response = new ReaderThread().execute().get();
                 if (response.equals("repetitiveUsername")) {
                     username.setError("Username is Taken");
-                    password.clearFocus();
-                    username.requestFocus();
+//
                 } else if (response.equals("uniqueUsername")) {
                     return true;
                 }

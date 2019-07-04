@@ -7,14 +7,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="MainPage">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/mainToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
+            app:title="Google Classroom"></android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/mainToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
-        app:title="Google Classroom"></android.support.v7.widget.Toolbar>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:scrollbars="vertical"
+            android:id="@+id/recyclerView"/>
+
+    </LinearLayout>
 
 
-</LinearLayout>
