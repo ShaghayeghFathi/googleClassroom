@@ -18,7 +18,15 @@
             android:padding="2dp"
             android:scaleType="fitXY"
             />
-
+        <ImageButton
+            android:id="@+id/class_click_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_class_button"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            />
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"

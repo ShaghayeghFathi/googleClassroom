@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".ChangeClassSettings">
+            android:parentActivityName=".MainPage"
+        </activity>
         <activity android:name=".ClassPage" />
         <activity
             android:name=".JoinClassPage"

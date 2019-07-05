@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -19,6 +21,7 @@ public class MainPage extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    ImageButton ib;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +36,8 @@ public class MainPage extends AppCompatActivity {
             new WriterThread(getApplication()).execute("classInfo");
             for (int i = 0; i < numOfClasses; i++) {
                 String subject=new ReaderThread().execute().get();
-                Log.d("readutf", "subject" + subject);
                 String section=new ReaderThread().execute().get();
-                Log.d("readutf", "section"+ section);
-
                 String info=new ReaderThread().execute().get();
-                Log.d("readutf", "info"+ info);
-
                 if (!section.equals("empty"))
                     exampleList.add(new ExampleItem((R.drawable.cl3),subject,section,info));
                 else
@@ -52,6 +50,8 @@ public class MainPage extends AppCompatActivity {
             mAdapter=new ExampleAdapter(exampleList);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(mAdapter);
+            ib=findViewById(R.id.class_click_btn);
+//            ib.setOnClickListener(this);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -91,6 +91,9 @@ public class MainPage extends AppCompatActivity {
         Intent i = new Intent(MainPage.this, MainPage.class);
         startActivity(i);
         finish();
+    }
+    public void onClick(View v){
+
     }
 
 }
