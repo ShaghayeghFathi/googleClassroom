@@ -3,37 +3,39 @@ package com.example.test;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class ClassPage extends AppCompatActivity {
-//final String TAG="newdddddddddddddd";
+public class ClassWorkPage extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_class_page);
+        setContentView(R.layout.activity_class_work_page);
         android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.mainToolbar);
         setSupportActionBar(myToolbar);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.classmenu, menu);
+        getMenuInflater().inflate(R.menu.classworkmenu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.AboutUs) {
-            Intent i = new Intent(ClassPage.this, AboutUsPage.class);
+            Intent i = new Intent(ClassWorkPage.this, AboutUsPage.class);
             startActivity(i);
         } else if (item.getItemId() == R.id.Refresh) {
             OnRestart();
         }
         else if (item.getItemId()==R.id.Classes)
         {
-            Intent i=new Intent(ClassPage.this,MainPage.class);
+            Intent i=new Intent(ClassWorkPage.this,MainPage.class);
+            startActivity(i);
+        }
+        else if (item.getItemId()==R.id.setting_btn)
+        {
+            Intent i=new Intent(ClassWorkPage.this,ChangeClassSettings.class);
             startActivity(i);
         }
 
@@ -42,19 +44,8 @@ public class ClassPage extends AppCompatActivity {
 
     protected void OnRestart() {
         super.onRestart();
-        Intent i = new Intent(ClassPage.this, ClassPage.class);
+        Intent i = new Intent(ClassWorkPage.this, ClassWorkPage.class);
         startActivity(i);
         finish();
-    }
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-            Log.d(this.getClass().getName(), "back button pressed");
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-    public void clickClassWork (View v)
-    {
-        Intent i=new Intent(ClassPage.this,ClassWorkPage.class);
-        startActivity(i);
     }
 }
