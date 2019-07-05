@@ -21,7 +21,8 @@ public class MainPage extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    ImageButton ib;
+    ImageView ib;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,27 +31,28 @@ public class MainPage extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         try {
             new WriterThread(getApplication()).execute("numOfClasses");
-            String numOfClassesSt=new ReaderThread().execute().get();
-            int numOfClasses=Integer.parseInt(numOfClassesSt);
-            ArrayList<ExampleItem> exampleList=new ArrayList<>();
+            String numOfClassesSt = new ReaderThread().execute().get();
+            int numOfClasses = Integer.parseInt(numOfClassesSt);
+            ArrayList<ExampleItem> exampleList = new ArrayList<>();
             new WriterThread(getApplication()).execute("classInfo");
             for (int i = 0; i < numOfClasses; i++) {
-                String subject=new ReaderThread().execute().get();
-                String section=new ReaderThread().execute().get();
-                String info=new ReaderThread().execute().get();
+                String subject = new ReaderThread().execute().get();
+                String section = new ReaderThread().execute().get();
+                String info = new ReaderThread().execute().get();
+                String code = "got the fucking code";
                 if (!section.equals("empty"))
-                    exampleList.add(new ExampleItem((R.drawable.cl3),subject,section,info));
+                    exampleList.add(new ExampleItem((R.drawable.cl3), subject, section, info, code));
                 else
-                    exampleList.add(new ExampleItem((R.drawable.cl3),subject,"",info));
+                    exampleList.add(new ExampleItem((R.drawable.cl3), subject, "", info, code));
 
             }
-            mRecyclerView=findViewById(R.id.recyclerView);
+            mRecyclerView = findViewById(R.id.recyclerView);
             mRecyclerView.setHasFixedSize(true);
-            mLayoutManager=new LinearLayoutManager(this);
-            mAdapter=new ExampleAdapter(exampleList);
+            mLayoutManager = new LinearLayoutManager(this);
+            mAdapter = new ExampleAdapter(exampleList, getApplicationContext());
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(mAdapter);
-            ib=findViewById(R.id.class_click_btn);
+            ib = findViewById(R.id.class_click_btn);
 //            ib.setOnClickListener(this);
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -73,8 +75,7 @@ public class MainPage extends AppCompatActivity {
             startActivity(i);
         } else if (item.getItemId() == R.id.Refresh) {
             OnRestart();
-        }
- else if (item.getItemId() == R.id.joinClass) {
+        } else if (item.getItemId() == R.id.joinClass) {
             Intent i = new Intent(MainPage.this, JoinClassPage.class);
             startActivity(i);
 
@@ -92,7 +93,8 @@ public class MainPage extends AppCompatActivity {
         startActivity(i);
         finish();
     }
-    public void onClick(View v){
+
+    public void onClick(View v) {
 
     }
 

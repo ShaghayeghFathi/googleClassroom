@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClassPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/mainbg">
     <android.support.v7.widget.Toolbar
         android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/toolbarColor"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
         app:title="Google Classroom"></android.support.v7.widget.Toolbar>
     <ScrollView
@@ -28,7 +29,8 @@
         android:text="ClassWork"
         android:textSize="12sp"
         android:layout_marginTop="150dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@color/itemColor"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,7 +39,8 @@
         android:text="People"
         android:textSize="12sp"
         android:layout_marginTop="100dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@color/itemColor"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

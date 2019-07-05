@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignInActivity">
+    tools:context=".SignInActivity"
+    android:background="@drawable/sign">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +24,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="70dp"
                 android:text="Sign In"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/toolbarColor"/>
 
             <EditText
                 android:id="@+id/username_signin_et"
@@ -35,7 +37,8 @@
                 android:hint="Username"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-
+                android:textColor="@color/colorAccent2"
+                android:backgroundTint="@color/colorAccent2"
                 />
 
             <EditText
@@ -48,7 +51,9 @@
                 android:hint="password"
                 android:inputType="textPassword"
                 android:paddingLeft="16dp"
-                android:paddingRight="16dp" />
+                android:paddingRight="16dp"
+                android:textColor="@color/colorAccent2"
+                android:backgroundTint="@color/colorAccent2"/>
 
             <Button
                 android:id="@+id/signIn_enter_btn"
@@ -58,7 +63,9 @@
                 android:layout_marginTop="50dp"
                 android:onClick="signIn_enter"
                 android:text="sign in"
-                android:textSize="10sp" />
+                android:textSize="12sp"
+                android:background="@color/itemColor"
+                android:textColor="@color/textLight"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

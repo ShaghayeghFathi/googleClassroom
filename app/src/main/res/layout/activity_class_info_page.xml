@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClassInfoPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/backgroundDay">
     <android.support.v7.widget.Toolbar
         android:id="@+id/mainToolbar"
         android:layout_width="match_parent"
@@ -23,15 +24,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Section:"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textColor="@color/toolbarColor"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Room:"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textColor="@color/toolbarColor"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Subject:"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textColor="@color/toolbarColor"/>
 </LinearLayout>

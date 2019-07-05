@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".JoinClassPage">
-    //hey
+    tools:context=".JoinClassPage"
+    android:background="@color/backgroundDay">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/joinClassToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/toolbarColor"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
         app:title="Create Class">
 
@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@color/colorPrimary"
+                android:background="@color/itemColor"
                 android:text="Join"
                 android:onClick="selectJoin"/>
             android:id="@+id/join_btn"
@@ -56,7 +56,8 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:hint="Class code"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                android:backgroundTint="@color/colorAccent2"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

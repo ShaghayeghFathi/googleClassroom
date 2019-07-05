@@ -16,8 +16,7 @@ public class SocketThread extends AsyncTask<Void,Void,Void> {
     protected Void doInBackground(Void... voids){
         try {
             Log.d("connect", "doInBackground: trying to make a socket");
-            socket=new Socket("192.168.43.177",12345);
-            Log.d("bye","world");
+            socket=new Socket("192.168.43.156",12345);
             dis=new DataInputStream(socket.getInputStream());
             dos=new DataOutputStream(socket.getOutputStream());
         } catch (IOException e) {

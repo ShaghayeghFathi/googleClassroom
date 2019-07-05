@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AboutUsPage">
+    tools:context=".AboutUsPage"
+    android:background="@color/backgroundDay">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/aboutUsToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/toolbarColor"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
-        app:title="About Us" />
+        app:title="About Us"
+        app:titleTextColor="@color/textLight"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,7 +30,8 @@
                 android:layout_marginTop="50dp"
                 android:inputType="textMultiLine"
                 android:text="Hello :)\nWe are Shaghayegh and Parmida :3\nWe are baby developers UwU\nWe study computer engineering at SBU ^-^\nWe hope you enjoy this app :D\nFollow us on instagram: @shaghayeghfathi @parmidaa_kh"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimaryDark"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

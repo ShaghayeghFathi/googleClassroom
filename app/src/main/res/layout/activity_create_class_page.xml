@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CreateClassPage">
+    tools:context=".CreateClassPage"
+    android:background="@color/backgroundDay">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/createClassToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/toolbarColor"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
         app:title="Create Class">
 
@@ -23,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/itemColor"
                 android:text="Create"
                 android:onClick="createButton"/>
             android:id="@+id/create_btn"
@@ -46,7 +47,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:hint="Class Name(required)" />
+                android:hint="Class Name(required)"
+                android:backgroundTint="@color/colorAccent2"/>
 
             <EditText
                 android:id="@+id/sectionName_et"
@@ -55,7 +57,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:hint="Section" />
+                android:hint="Section"
+                android:backgroundTint="@color/colorAccent2"/>
 
             <EditText
                 android:id="@+id/roomName_et"
@@ -64,7 +67,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
-                android:hint="Room" />
+                android:hint="Room"
+                android:backgroundTint="@color/colorAccent2"/>
 
             <EditText
                 android:id="@+id/subjectName_et"
@@ -73,7 +77,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Subject" />
+                android:hint="Subject"
+                android:backgroundTint="@color/colorAccent2"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
