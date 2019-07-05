@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/backgroundDay">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,7 +24,10 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="100dp"
                 android:text="Welcome To Google Classroom"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/toolbarColor"
+                />
 
             <Button
                 android:id="@+id/signUp_btn"
@@ -35,7 +39,10 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:text="sign up"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                android:background="@color/itemColor"
+                android:textColor="@color/textLight"
+                />
 
             <Button
                 android:id="@+id/signIn_btn"
@@ -49,7 +56,8 @@
                 android:paddingRight="16dp"
                 android:text="sign in"
                 android:textSize="10sp"
-
+                android:background="@color/itemColor"
+                android:textColor="@color/textLight"
                 />
 
 

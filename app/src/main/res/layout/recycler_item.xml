@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:padding="2dp"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            />
 
         <TextView
             android:id="@+id/textView"
@@ -60,6 +61,7 @@
             android:text="line 3"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="15sp" />
+
 
     </RelativeLayout>
 

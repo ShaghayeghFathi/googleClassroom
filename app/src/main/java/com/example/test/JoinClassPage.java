@@ -36,6 +36,10 @@ public class JoinClassPage extends AppCompatActivity {
             }else if(ans.equals("wrongCode")){
                 Toast.makeText(getApplicationContext(),"Wrong code!",Toast.LENGTH_LONG).show();
             }
+            else if (ans.equals("repeat"))
+            {
+                Toast.makeText(getApplicationContext(),"You are already in this class",Toast.LENGTH_LONG).show();
+            }
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

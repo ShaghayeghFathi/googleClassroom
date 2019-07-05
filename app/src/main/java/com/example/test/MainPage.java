@@ -33,8 +33,13 @@ public class MainPage extends AppCompatActivity {
             new WriterThread(getApplication()).execute("classInfo");
             for (int i = 0; i < numOfClasses; i++) {
                 String subject=new ReaderThread().execute().get();
+                Log.d("readutf", "subject" + subject);
                 String section=new ReaderThread().execute().get();
+                Log.d("readutf", "section"+ section);
+
                 String info=new ReaderThread().execute().get();
+                Log.d("readutf", "info"+ info);
+
                 if (!section.equals("empty"))
                     exampleList.add(new ExampleItem((R.drawable.cl3),subject,section,info));
                 else

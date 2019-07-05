@@ -77,11 +77,14 @@ final String TAG="fuq";
                 section_input = section.getText().toString();
                 room_input = room.getText().toString();
                 className_input = className.getText().toString();
+                subject_input=subject.getText().toString();
                 new WriterThread(getApplication()).execute("createClass");
-                new WriterThread(getApplication()).execute(subject_input);
+                new WriterThread(getApplication()).execute(className_input);
                 new WriterThread(getApplication()).execute(room_input);
                 new WriterThread(getApplication()).execute(section_input);
-                new WriterThread(getApplication()).execute("last one");
+                new WriterThread(getApplication()).execute(subject_input);
+
+//                new WriterThread(getApplication()).execute("last one");
                 Intent in = new Intent(CreateClassPage.this, ClassPage.class);
                 startActivity(in);
             }catch (Exception e){

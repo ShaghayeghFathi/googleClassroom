@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class ClassPage extends AppCompatActivity {
-final String TAG="newdddddddddddddd";
+//final String TAG="newdddddddddddddd";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
