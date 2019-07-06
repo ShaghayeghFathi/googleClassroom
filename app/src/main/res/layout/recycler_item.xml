@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/cl3"
-    app:cardCornerRadius="4dp">
+    app:cardCornerRadius="4dp"
+    android:padding="20dp">
 
     <ImageView
         android:id="@+id/imageView"
@@ -19,7 +20,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_class_button" />
+        android:src="@drawable/ic_class_button"
+        />
 
     <TextView
         android:id="@+id/textView"

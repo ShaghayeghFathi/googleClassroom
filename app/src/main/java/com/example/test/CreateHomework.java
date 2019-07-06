@@ -3,11 +3,13 @@ package com.example.test;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -19,12 +21,22 @@ public class CreateHomework extends AppCompatActivity implements DatePickerDialo
     TextView timetext;
     Dialog datePicker;
     Dialog timePicker;
+    TextInputEditText title;
+    TextInputEditText description;
+    EditText point;
     final String TAG = "ftsio";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_homework);
+        android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.createHomeworkToolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        title=findViewById(R.id.title_hw);
+        description=findViewById(R.id.Description_hw);
+        point=findViewById(R.id.point_assignment);
         datetext = findViewById(R.id.textView4);
         timetext = findViewById(R.id.textView5);
         Calendar c = Calendar.getInstance();
