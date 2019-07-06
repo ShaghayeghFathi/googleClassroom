@@ -5,27 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ClassWorkPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bg5">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/createClassToolbar"
+        android:id="@+id/classWorkToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toolbarColor"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
-        app:title="Class Work">
+        app:title="Class Work"
+        app:titleTextColor="@color/textLight">
     </android.support.v7.widget.Toolbar>
-
-        <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
-
-            <!--<ImageButton-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:background="@color/toolbarColor"-->
-                <!--android:id="@+id/setting_btn"-->
-                <!--android:src="@drawable/ic_setting"-->
-                <!--android:onClick="clickSetting"/>-->
-        <!--</RelativeLayout>-->
 </LinearLayout>

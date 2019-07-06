@@ -4,7 +4,8 @@
     <item android:id="@+id/setting_btn"
         android:icon="@drawable/ic_setting"
         android:title="settings"
-        app:showAsAction="always">
+        app:showAsAction="always"
+        >
 
     </item>
     <item android:id="@+id/Classes"

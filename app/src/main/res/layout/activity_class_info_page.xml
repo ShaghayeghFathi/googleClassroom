@@ -4,38 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClassInfoPage"
+    android:background="@color/backgroundDay"
     android:orientation="vertical"
-    android:background="@color/backgroundDay">
+    tools:context=".ClassInfoPage">
+
     <android.support.v7.widget.Toolbar
-        android:id="@+id/mainToolbar"
+        android:id="@+id/classInfoToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toolbarColor"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar"
         app:title="About"></android.support.v7.widget.Toolbar>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Class Name:"
-    android:layout_marginTop="10dp"
-    android:textStyle="bold"/>
+
     <TextView
+        android:id="@+id/name_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Class Name:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Description" />
+
+    <TextView
+        android:id="@+id/section_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Section:"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/toolbarColor"/>
+        android:textColor="@color/toolbarColor" />
+
     <TextView
+        android:id="@+id/room_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Room:"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/toolbarColor"/>
+        android:textColor="@color/toolbarColor" />
+
     <TextView
+        android:id="@+id/subject_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Subject:"
         android:layout_marginTop="10dp"
-        android:textColor="@color/toolbarColor"/>
+        android:text="Subject:"
+        android:textColor="@color/toolbarColor" />
 </LinearLayout>

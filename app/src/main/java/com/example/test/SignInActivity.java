@@ -17,6 +17,7 @@ public class SignInActivity extends AppCompatActivity {
     Button signIn;
     String username_input;
     String password_input;
+    String classCode;
     boolean correctUsername = false;
     boolean correctPassword = false;
     final String TAG = "asdf";
@@ -72,6 +73,8 @@ public class SignInActivity extends AppCompatActivity {
                 }
                 if (msg.equals("loggedIn")) {
                     Intent GoMainPage = new Intent(SignInActivity.this, MainPage.class);
+                    GoMainPage.putExtra("classCode", classCode);
+                    GoMainPage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(GoMainPage);
                 }
 

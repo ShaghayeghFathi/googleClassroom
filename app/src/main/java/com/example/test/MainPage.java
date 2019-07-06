@@ -36,10 +36,10 @@ public class MainPage extends AppCompatActivity {
             ArrayList<ExampleItem> exampleList = new ArrayList<>();
             new WriterThread(getApplication()).execute("classInfo");
             for (int i = 0; i < numOfClasses; i++) {
+                String code=new ReaderThread().execute().get();
                 String subject = new ReaderThread().execute().get();
                 String section = new ReaderThread().execute().get();
                 String info = new ReaderThread().execute().get();
-                String code = "got the fucking code";
                 if (!section.equals("empty"))
                     exampleList.add(new ExampleItem((R.drawable.cl3), subject, section, info, code));
                 else
@@ -97,5 +97,6 @@ public class MainPage extends AppCompatActivity {
     public void onClick(View v) {
 
     }
+
 
 }

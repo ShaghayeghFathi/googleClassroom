@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@drawable/mainbg">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/mainToolbar"
+        android:id="@+id/classToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toolbarColor"

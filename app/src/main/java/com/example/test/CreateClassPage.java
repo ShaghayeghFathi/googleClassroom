@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,9 @@ public class CreateClassPage extends AppCompatActivity {
     String room_input;
     String subject_input;
     String section_input;
-final String TAG="fuq";
+    String classCode;
+    final String TAG = "fuq";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +54,7 @@ final String TAG="fuq";
 
     private boolean className() {
         className_input = className.getText().toString();
-        Log.d(TAG, "className: "+ className_input);
+        Log.d(TAG, "className: " + className_input);
         if (className_input.matches("")) {
             className.setError("this field is required!");
             return false;
@@ -62,7 +65,7 @@ final String TAG="fuq";
 
     private boolean room() {
         room_input = room.getText().toString();
-        Log.d(TAG, "room: "+ room);
+        Log.d(TAG, "room: " + room);
         if (room_input.matches("")) {
             room.setError("this field is required!");
             return false;
@@ -77,17 +80,22 @@ final String TAG="fuq";
                 section_input = section.getText().toString();
                 room_input = room.getText().toString();
                 className_input = className.getText().toString();
-                subject_input=subject.getText().toString();
+                subject_input = subject.getText().toString();
                 new WriterThread(getApplication()).execute("createClass");
                 new WriterThread(getApplication()).execute(className_input);
                 new WriterThread(getApplication()).execute(room_input);
                 new WriterThread(getApplication()).execute(section_input);
                 new WriterThread(getApplication()).execute(subject_input);
-
+                classCode = new ReaderThread().execute().get();
+                Log.d(TAG, "createButton: " + classCode);
 //                new WriterThread(getApplication()).execute("last one");
                 Intent in = new Intent(CreateClassPage.this, ClassPage.class);
+                String stat="teacher";
+                in.putExtra("classCode", classCode);
+                in.putExtra("status" ,stat);
+                in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(in);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

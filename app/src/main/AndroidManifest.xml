@@ -14,15 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".CreateHomework"></activity>
-        <activity android:name=".ChangeClassSettings" />
-        <activity android:name=".changeClassSettings" />
+        <activity
+            android:name=".ChangeClassSettings"
+            android:parentActivityName=".MainPage" />
+
         <activity android:name=".ClassPage" />
         <activity
             android:name=".JoinClassPage"
             android:parentActivityName=".MainPage" />
+
         <activity
             android:name=".CreateClassPage"
             android:parentActivityName=".MainPage" />
+        <activity android:name=".ClassWorkPage"/>
+        <activity android:name=".ClassInfoPage"/>
         <activity android:name=".AboutUsPage" />
         <activity android:name=".MainPage" />
         <activity android:name=".SignInActivity" />

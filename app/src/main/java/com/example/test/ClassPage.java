@@ -10,12 +10,16 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class ClassPage extends AppCompatActivity {
-//final String TAG="newdddddddddddddd";
+    String classCode;
+    String stat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent i = getIntent();
+        classCode=i.getStringExtra("classCode");
+        stat=i.getStringExtra("status");
         setContentView(R.layout.activity_class_page);
-        android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.mainToolbar);
+        android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.classToolbar);
         setSupportActionBar(myToolbar);
     }
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -55,6 +59,9 @@ public class ClassPage extends AppCompatActivity {
     public void clickClassWork (View v)
     {
         Intent i=new Intent(ClassPage.this,ClassWorkPage.class);
+        i.putExtra("classCode" , classCode);
+        i.putExtra("status" , stat);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
 }
