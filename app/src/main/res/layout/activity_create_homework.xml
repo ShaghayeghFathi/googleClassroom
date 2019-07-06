@@ -4,37 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateHomework"
+    android:background="@drawable/bg8"
     android:orientation="vertical"
-    android:background="@drawable/bg8">
+    tools:context=".CreateHomework">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/createHomeworkToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/toolbarColor"
         android:theme="@style/Base.ThemeOverlay.AppCompat.ActionBar">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
+                android:id="@+id/send_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="12dp"
-                android:id="@+id/send_btn"
-
+                android:onClick="clickSend"
                 android:src="@drawable/ic_send" />
             <!--android:onClick="clickSend"-->
 
             <ImageView
+                android:id="@+id/attachment_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="32dp"
                 android:layout_toLeftOf="@+id/send_btn"
-                android:src="@drawable/ic_attachment"
-                android:id="@+id/attachment_btn"
-          />
+                android:src="@drawable/ic_attachment" />
             <!--android:onClick="clickAttachment"-->
         </RelativeLayout>
 
@@ -43,58 +44,60 @@
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/textLight"
-        android:textColor="@color/textLight">
+        android:textColor="@color/textLight"
+        android:textColorHint="@color/textLight">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/title_hw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Title"
             android:backgroundTint="@color/itemColor"
-            android:textColorHint="@color/textLight"
+            android:hint="Title"
             android:textColor="@color/textLight"
-            android:id="@+id/title_hw"/>
+            android:textColorHint="@color/textLight" />
     </android.support.design.widget.TextInputLayout>
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/textLight"
-        android:textColor="@color/textLight">
+        android:textColor="@color/textLight"
+        android:textColorHint="@color/textLight">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/Description_hw"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/itemColor"
             android:hint="Description(Optional)"
-            android:id="@+id/Description_hw"
-            android:textColorHint="@color/textLight"
             android:textColor="@color/textLight"
-            android:backgroundTint="@color/itemColor"/>
+            android:textColorHint="@color/textLight" />
     </android.support.design.widget.TextInputLayout>
 
     <EditText
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/point_assignment"
-        android:text="Point: "
-        android:textColor="@color/textLight"
-        android:backgroundTint="@color/itemColor"/>
-    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/topic_hw"
-        android:text="Topic:"
-        android:textColor="@color/textLight"/>
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/itemColor"
+        android:text="Point: "
+        android:textColor="@color/textLight" />
 
-<TextView
-    android:id="@+id/textView4"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Date"
-    android:layout_marginTop="20dp"
-    android:textSize="15sp"
-    android:textColor="@color/textLight"
-    android:backgroundTint="@color/itemColor"/>
+    <EditText
+        android:id="@+id/topic_hw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Topic:"
+        android:textColor="@color/textLight" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/itemColor"
+        android:text="Date"
+        android:textColor="@color/textLight"
+        android:textSize="15sp" />
 
 
     <TextView
@@ -102,11 +105,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:textSize="15sp"
+        android:backgroundTint="@color/itemColor"
         android:text="Time"
         android:textColor="@color/textLight"
-        android:backgroundTint="@color/itemColor"/>
-
+        android:textSize="15sp" />
 
 
 </LinearLayout>

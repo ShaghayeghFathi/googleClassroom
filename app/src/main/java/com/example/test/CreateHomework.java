@@ -103,6 +103,7 @@ public class CreateHomework extends AppCompatActivity implements DatePickerDialo
         new WriterThread(getApplication()).execute(timetxt_tx);
         Intent i=new Intent(CreateHomework.this,ClassWorkPage.class);
         i.putExtra("classCode", classCode);
+        i.putExtra("status" , "teacher");
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
