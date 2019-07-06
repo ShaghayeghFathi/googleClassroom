@@ -3,6 +3,7 @@ package com.example.test;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,7 +25,15 @@ public class CreateHomework extends AppCompatActivity implements DatePickerDialo
     TextInputEditText title;
     TextInputEditText description;
     EditText point;
+    EditText topic;
     final String TAG = "ftsio";
+    String datetext_tx;
+    String timetxt_tx;
+    String title_tx;
+    String description_tx;
+    String point_tx;
+    String classCode;
+    String topic_tx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +48,10 @@ public class CreateHomework extends AppCompatActivity implements DatePickerDialo
         point=findViewById(R.id.point_assignment);
         datetext = findViewById(R.id.textView4);
         timetext = findViewById(R.id.textView5);
+        topic=findViewById(R.id.topic_hw);
+        Intent i = getIntent();
+        classCode=i.getStringExtra("classCode");
         Calendar c = Calendar.getInstance();
-
         datePicker = new DatePickerDialog(this, this, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
         timePicker = new TimePickerDialog(this, this, 0, 0, true);
 
@@ -72,5 +83,27 @@ public class CreateHomework extends AppCompatActivity implements DatePickerDialo
         Log.d(TAG, "onDateSet: " + hourOfDay + ":" + minute);
         timetext.setText(new StringBuilder().append(hourOfDay).append(":")
                 .append(minute).toString());
+    }
+    public void clickSend(View v){
+        datetext_tx=datetext.getText().toString();
+        timetxt_tx=timetext.getText().toString();
+        title_tx=title.getText().toString();
+        description_tx=description.getText().toString();
+        point_tx=point.getText().toString();
+        topic_tx=topic.getText().toString();
+        datetext_tx=datetext.getText().toString();
+        timetxt_tx=timetext.getText().toString();
+        new WriterThread(getApplication()).execute("createAssignment");
+        new WriterThread(getApplication()).execute(classCode);
+        new WriterThread(getApplication()).execute(title_tx);
+        new WriterThread(getApplication()).execute(description_tx);
+        new WriterThread(getApplication()).execute(point_tx);
+        new WriterThread(getApplication()).execute(topic_tx);
+        new WriterThread(getApplication()).execute(datetext_tx);
+        new WriterThread(getApplication()).execute(timetxt_tx);
+        Intent i=new Intent(CreateHomework.this,ClassWorkPage.class);
+        i.putExtra("classCode", classCode);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
     }
 }

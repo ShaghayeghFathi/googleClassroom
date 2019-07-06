@@ -1,15 +1,18 @@
 package com.example.test;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class ClassWorkPage extends AppCompatActivity {
 String classCode;
 String stat;
+FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,13 @@ String stat;
         android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.classWorkToolbar);
         setSupportActionBar(myToolbar);
         Log.d("classWorkPage", "onCreate: end");
+        fab=findViewById(R.id.floatingActionButton);
+        if(!stat.equals("teacher")){
+            fab.hide();
+        }
+        else{
+            fab.show();
+        }
     }
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -68,5 +78,11 @@ String stat;
         Intent i = new Intent(ClassWorkPage.this, ClassWorkPage.class);
         startActivity(i);
         finish();
+    }
+    public void FABClick(View v){
+        Intent i =new Intent(ClassWorkPage.this,CreateHomework.class);
+        i.putExtra("classCode", classCode);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
     }
 }

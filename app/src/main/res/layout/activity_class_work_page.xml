@@ -16,4 +16,21 @@
         app:title="Class Work"
         app:titleTextColor="@color/textLight">
     </android.support.v7.widget.Toolbar>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="37dp"
+        android:clickable="true"
+        app:srcCompat="@color/toolbarColor"
+        android:onClick="FABClick"/>
+</RelativeLayout>
+
 </LinearLayout>

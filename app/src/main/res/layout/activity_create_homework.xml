@@ -23,8 +23,9 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="12dp"
                 android:id="@+id/send_btn"
-                android:onClick="clickSend"
+
                 android:src="@drawable/ic_send" />
+            <!--android:onClick="clickSend"-->
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -33,7 +34,8 @@
                 android:layout_toLeftOf="@+id/send_btn"
                 android:src="@drawable/ic_attachment"
                 android:id="@+id/attachment_btn"
-                android:onClick="clickAttachment"/>
+          />
+            <!--android:onClick="clickAttachment"-->
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
