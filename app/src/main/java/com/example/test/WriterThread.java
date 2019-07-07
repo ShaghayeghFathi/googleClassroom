@@ -11,7 +11,6 @@ import java.io.IOException;
 public class WriterThread extends AsyncTask<String, Void, Void> {
     ProgressDialog pd;
     Context ctx;
-    final String TAG = "WTF";
 
     public WriterThread(Context ctx) {
         this.ctx = ctx;
@@ -29,7 +28,6 @@ public class WriterThread extends AsyncTask<String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         try {
-            Log.d(TAG, "doInBackground: " + strings[0]);
             for (String str : strings) {
                 SocketThread.dos.writeUTF(str);
                 SocketThread.dos.flush();

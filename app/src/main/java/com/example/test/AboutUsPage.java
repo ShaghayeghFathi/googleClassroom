@@ -14,28 +14,27 @@ public class AboutUsPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us_page);
-        android.support.v7.widget.Toolbar myToolbar=findViewById(R.id.aboutUsToolbar);
+        android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.aboutUsToolbar);
         setSupportActionBar(myToolbar);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.aboutusmenu,menu);
+        getMenuInflater().inflate(R.menu.aboutusmenu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId()==R.id.Refresh)
-        {
+        if (item.getItemId() == R.id.Refresh) {
             OnRestart();
         }
         return super.onOptionsItemSelected(item);
     }
-    protected void OnRestart()
-    {
+
+    protected void OnRestart() {
         super.onRestart();
-        Intent i=new Intent(AboutUsPage.this,AboutUsPage.class);
+        Intent i = new Intent(AboutUsPage.this, AboutUsPage.class);
         startActivity(i);
         finish();
     }

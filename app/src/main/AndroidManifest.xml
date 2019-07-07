@@ -13,10 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".PeoplePage"></activity>
+        <activity android:name=".StudentDetail"></activity>
+        <activity android:name=".PeoplePage" />
         <activity
             android:name=".CreateHomework"
-            android:parentActivityName=".ClassWorkPage"></activity>
+            android:parentActivityName=".ClassWorkPage" />
         <activity
             android:name=".ChangeClassSettings"
             android:parentActivityName=".MainPage" />

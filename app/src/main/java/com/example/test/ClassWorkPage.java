@@ -19,11 +19,9 @@ FloatingActionButton fab;
         Intent i = getIntent();
         classCode=i.getStringExtra("classCode");
         stat=i.getStringExtra("status");
-        Log.d("classWorkPage", "onCreate: beginning");
         setContentView(R.layout.activity_class_work_page);
         android.support.v7.widget.Toolbar myToolbar = findViewById(R.id.classWorkToolbar);
         setSupportActionBar(myToolbar);
-        Log.d("classWorkPage", "onCreate: end");
         fab=findViewById(R.id.floatingActionButton);
         if(!stat.equals("teacher")){
             fab.hide();
@@ -34,8 +32,6 @@ FloatingActionButton fab;
     }
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        Log.d("classWorkPage", "onCreate: menu" +
-                "");
         getMenuInflater().inflate(R.menu.classworkmenu, menu);
         return true;
     }

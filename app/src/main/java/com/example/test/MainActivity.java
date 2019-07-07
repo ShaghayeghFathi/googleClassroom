@@ -15,12 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         new SocketThread().execute();
-        Log.d("main", "onCreate: making new connection");
         findViewById(R.id.signUp_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                signUp(v);
-                startActivity(new Intent(MainActivity.this,CreateHomework.class));
+                signUp(v);
             }
         });
 

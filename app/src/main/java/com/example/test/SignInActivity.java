@@ -49,7 +49,6 @@ public class SignInActivity extends AppCompatActivity {
 
     public void signIn_enter(View v) {
         try {
-            Log.d(TAG, "signIn_enter: ");
             if (clickPassword_in() && isCorrectUsername()) {
                 new WriterThread(getApplicationContext()).execute("password", password_input);
                 String ans = new ReaderThread().execute().get();

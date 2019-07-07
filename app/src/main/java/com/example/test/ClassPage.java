@@ -64,4 +64,10 @@ public class ClassPage extends AppCompatActivity {
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(i);
     }
+    public void clickPeople(View v){
+        Intent i=new Intent(ClassPage.this,PeoplePage.class);
+        i.putExtra("classCode" , classCode);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+    }
 }

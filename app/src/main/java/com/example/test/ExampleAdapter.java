@@ -22,7 +22,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         public TextView mTextview1;
         public TextView mTextview2;
         public TextView mTextview3;
-        public ImageView options;
+        public ImageView options; //3 dotes
 
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,7 +59,6 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         holder.options.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("shitthisfuck", "onClick: Position " + mExampleList.get(pos).getCode());
                 Intent i = new Intent(ctx, ChangeClassSettings.class);
                 i.putExtra("classCode", mExampleList.get(pos).getCode());
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

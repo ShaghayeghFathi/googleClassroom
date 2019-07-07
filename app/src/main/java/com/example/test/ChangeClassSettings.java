@@ -40,23 +40,17 @@ public class ChangeClassSettings extends AppCompatActivity {
         classCode_tv=findViewById(R.id.classCode_tv);
         classCode_tv.setText("Class code: " + classCode);
         new WriterThread(getApplication()).execute("getClassInfo");
-        Log.d("changeSetting", "onCreate: after write get class info" );
         new WriterThread(getApplication()).execute(classCode);
-        Log.d("changeSetting", "onCreate: after read classCode" );
         try {
             String t=new ReaderThread().execute().get();
-            Log.d("changeSetting", "onCreate: after read t" );
             String s=new ReaderThread().execute().get();
-            Log.d("changeSetting", "onCreate: after read d" );
             String r=new ReaderThread().execute().get();
-            Log.d("changeSetting", "onCreate: after read r" );
             String su= new ReaderThread().execute().get();
             title.setText(t);
 //            Description.setText(new ReaderThread().execute().get());
             section.setText(s);
             room.setText(r);
             subject.setText(su);
-            Log.d("changeSetting", "onCreate: after read" );
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {

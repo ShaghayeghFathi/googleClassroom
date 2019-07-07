@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:inputType="textMultiLine"
-                android:text="Hello :)\nWe are Shaghayegh and Parmida :3\nWe are baby developers UwU\nWe study computer engineering at SBU ^-^\nWe hope you enjoy this app :D\nFollow us on instagram: @shaghayeghfathi @parmidaa_kh"
+                android:text="Hello :)\nWe are Shaghayegh and Parmida \nWe are beginner developers \nWe study computer engineering at SBU ^-^\nWe hope you enjoy this app \nFollow us on instagram: @shaghayeghfathi @parmidaa_kh"
                 android:textSize="20sp"
                 android:textColor="@color/colorPrimaryDark"/>
         </LinearLayout>

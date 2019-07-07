@@ -54,7 +54,6 @@ public class CreateClassPage extends AppCompatActivity {
 
     private boolean className() {
         className_input = className.getText().toString();
-        Log.d(TAG, "className: " + className_input);
         if (className_input.matches("")) {
             className.setError("this field is required!");
             return false;
@@ -65,7 +64,6 @@ public class CreateClassPage extends AppCompatActivity {
 
     private boolean room() {
         room_input = room.getText().toString();
-        Log.d(TAG, "room: " + room);
         if (room_input.matches("")) {
             room.setError("this field is required!");
             return false;
@@ -87,8 +85,6 @@ public class CreateClassPage extends AppCompatActivity {
                 new WriterThread(getApplication()).execute(section_input);
                 new WriterThread(getApplication()).execute(subject_input);
                 classCode = new ReaderThread().execute().get();
-                Log.d(TAG, "createButton: " + classCode);
-//                new WriterThread(getApplication()).execute("last one");
                 Intent in = new Intent(CreateClassPage.this, ClassPage.class);
                 String stat="teacher";
                 in.putExtra("classCode", classCode);

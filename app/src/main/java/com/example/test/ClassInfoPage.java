@@ -36,19 +36,13 @@ public class ClassInfoPage extends AppCompatActivity {
         section = findViewById(R.id.section_info);
         subject = findViewById(R.id.subject_info);
         new WriterThread(getApplication()).execute("getClassInfo");
-//        Log.d("changeSetting", "onCreate: after write get class info");
         new WriterThread(getApplication()).execute(classCode);
-//        Log.d("changeSetting", "onCreate: after read classCode");
         try {
             String t = new ReaderThread().execute().get();
-//            Log.d("changeSetting", "onCreate: after read t");
             String s = new ReaderThread().execute().get();
-//            Log.d("changeSetting", "onCreate: after read d");
             String r = new ReaderThread().execute().get();
-//            Log.d("changeSetting", "onCreate: after read r");
             String su = new ReaderThread().execute().get();
             className.setText("Class Name: "+t);
-//            Description.setText(new ReaderThread().execute().get());
             section.setText("Section: "+s);
             room.setText("Room: "+r);
             subject.setText("Subject: "+su);

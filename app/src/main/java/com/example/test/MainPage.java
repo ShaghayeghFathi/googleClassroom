@@ -71,7 +71,7 @@ public class MainPage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.AboutUs) {
-            Intent i = new Intent(MainPage.this, AboutUsPage.class);
+            Intent i = new Intent(MainPage.this, StudentDetail.class);
             startActivity(i);
         } else if (item.getItemId() == R.id.Refresh) {
             OnRestart();

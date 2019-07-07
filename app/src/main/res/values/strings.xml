@@ -8,4 +8,5 @@
     <string name="createClass">create class</string>
     <string name="joinClass">join class</string>
     <string name="select_image">Select Image</string>
+    <string name="user_profile">User Profile</string>
 </resources>

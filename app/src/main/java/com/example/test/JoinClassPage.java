@@ -29,7 +29,6 @@ public class JoinClassPage extends AppCompatActivity {
         new WriterThread(getApplication()).execute(code);
         try {
             String ans=new ReaderThread().execute().get();
-//            Log.d("ans", "selectJoin: "+ ans);
             if(ans.equals("correctCode")){
                 Intent i=new Intent(JoinClassPage.this,ClassPage.class);
                 String stat="student";
